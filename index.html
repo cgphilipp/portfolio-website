@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Philipp Otto</title>
+    <link rel="stylesheet" href="css/stacks.min.css">
+    <style>
+        @font-face {
+            font-family: montserrat;
+            src: url(font/Roboto-VariableFont_wdth\,wght.ttf);
+        }
+
+        body {
+            font-family: montserrat;
+        }
+
+        .portfolio-card {
+            padding: 20px;
+            border: 1px solid #b6b6b6;
+            border-radius: 5px;
+            background-color: var(--green-200)
+        }
+
+        .portfolio-entry {
+            padding: 16px;
+            margin: 16px 0px;
+            border-left: 4px solid var(--green-400);
+            background-color: var(--black-150);
+            border-radius: 8px;
+        }
+
+        .portfolio-entry h3 {
+            margin: 4px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            color: var(--black-600);
+        }
+
+        .portfolio-entry .date {
+            font-style: italic;
+            color: var(--black-500);
+        }
+
+        .portfolio-entry .institution {
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        .portfolio-entry .details {
+            margin-top: 4px;
+            font-size: 1em;
+            color: var(--black-500);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="p24 bg-green-400 fc-white">
+        <h1 class="p6 m0 fs-headline2 ta-center">Philipp Otto</h1>
+        <div class="p6 m0 fs-subheading ta-center">
+            <a href="https://www.linkedin.com/in/philipp-otto-8691a4265/" target=”_blank”>
+                <image src="image/in-logo/InBug-White.png" style="height: 1em;">
+            </a>
+            <a href="https://github.com/cgphilipp" target=”_blank”>
+                <image src="image/github-mark/github-mark-white.svg" style="height: 1em;">
+            </a>
+        </div>
+        <p class="p0 m0 fs-subheading ta-center">
+            <i>computer graphics and audio/video specialist,</i>
+        <p class="p0 m0 fs-subheading ta-center">
+            <i>C++ and rust generalist,</i>
+        </p>
+        <p class="p0 m0 fs-subheading ta-center">
+            <i>making things render quick since 2015</i>
+        </p>
+    </header>
+
+    <div class="m16 d-grid g16 grid__3 sm:g-af-row">
+        <div class="portfolio-card grid--item grid--col1 grid--row1">
+            <h2>Education</h2>
+            <div class="portfolio-entry">
+                <div class="date">Mar 2017 - Jan 2020</div>
+                <h3>IT Systems Engineering (M.Sc.)</h3>
+                <div class="institution">Hasso Plattner Institute, Potsdam</div>
+                <div class="details">Grade: 1.2</div>
+                <div class="details">Thesis:<br>“Design and Implementation of a Physically-Based Renderer using
+                    Multi-Frame Sampling”</div>
+            </div>
+
+            <div class="portfolio-entry">
+                <div class="date">Oct 2013 - Jul 2016</div>
+                <h3>IT Systems Engineering (B.Sc.)</h3>
+                <div class="institution">Hasso Plattner Institute, Potsdam</div>
+                <div class="details">Grade: 1.3</div>
+            </div>
+        </div>
+        <div class="portfolio-card grid--item grid--col2 grid--row3">
+            <h2>Work experience</h2>
+
+            <div class="portfolio-entry">
+                <div class="date">Apr 2022 - current</div>
+                <h3>Incari</h3>
+                <div class="institution">Senior graphics developer (Apr 2024 - current) </div>
+                <div class="institution">Graphics developer (Apr 2022 - Sept 2024)</div>
+                <div class="details">
+                    At Incari, I am responsible for the architecture and implementation of 2D and 3D rendering
+                    pipelines. We are targeting both Desktop systems running Windows or Linux as well as embedded
+                    devices running Android and Embedded Linux distributions.
+                    <ul>
+                        <li>developed the rendering backend for a 2D vector graphics renderer using Google skia,
+                            including ability to import Figma documents</li>
+                        <li>ported the rendering system to embedded ARM64 platforms using OpenGL ES3</li>
+                        <li>implemented XR rendering via OpenXR and the Varjo Native SDK</li>
+                        <li>enabled seamless integration of 2D and 3D rendering pipelines via render-to-texture</li>
+                        <li>ported the renderer to be used as a dynamic library for Android</li>
+                        <li>maintained the video processing pipeline using gstreamer</li>
+                        <li>designed and prototyped a Vulkan rendering backend</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="portfolio-entry">
+                <div class="date">May 2020 - Mar 2022</div>
+                <h3>~sedna</h3>
+                <div class="institution">Research and development engineer</div>
+                <div class="details">
+                    I developed core technologies for a Linux-based digital signage system using
+                    C++, OpenGL and FFmpeg.
+                    <ul>
+                        <li>implemented
+                            support for HDR monitor output + HDR video input, targeting both monitors and videos using
+                            PQ and HLG encoding</li>
+                        <li>integrated hardware decoding of H.265 and
+                            H.254 video streams using
+                            NVDEC</li>
+                        <li>benchmarked and optimized the video processing pipeline (including demuxing and decoding of
+                            the
+                            video stream) with FFmpeg</li>
+                        <li>implemented features and performance improvements for the rendering pipeline using OpenGL
+                        </li>
+                        <li>evaluated and prototyped support for Vulkan video output and ALSA
+                            audio output</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="portfolio-entry">
+                <div class="date">Mar 2018 - Aug 2018</div>
+                <h3>Human Computer Interaction Lab at Hasso Plattner Institute</h3>
+                <div class="institution">Working Student</div>
+                <div class="details">
+                </div>
+            </div>
+
+            <div class="portfolio-entry">
+                <div class="date">Feb 2017 - Feb 2018</div>
+                <h3>CG Internals</h3>
+                <div class="institution">Working Student</div>
+                <div class="details">
+                </div>
+            </div>
+
+            <div class="portfolio-entry">
+                <div class="date">Aug 2016 - Jan 2017</div>
+                <h3>Ubisoft, Studio Blue Byte Mainz</h3>
+                <div class="date"></div>
+                <div class="institution">Graphics programming (internship)</div>
+                <div class="details">
+                    I worked on the DirectX-based C++ game engine used for Anno 1800.
+                    <ul>
+                        <li>reworked the PBR material rendering of the engine to match the look of Substance Painter,
+                            which increased artist productivity</li>
+                        <li>implemented Sample Distribution Shadow Maps (SDSM), a shadow mapping technique based on
+                            calculating partitions using computer shaders</li>
+                        <li>added multiple visual effects including: rain based on compute shader particles, realistic
+                            interaction of plants with wind, dynamic generation of water puddles</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="portfolio-card grid--item grid--col1 grid--row1">
+            <h2>Skills</h2>
+            <div class="portfolio-entry">
+                <b>Programming languages:</b> C++, Rust, C, Python, TypeScript, JavaScript, Java, C#, Ruby
+            </div>
+            <div class="portfolio-entry">
+                <b>Graphics APIs:</b> OpenGL, Vulkan, WebGL, DirectX, GLSL, HLSL, Wayland, OpenXR, skia, FFmpeg,
+                gstreamer, OpenCV, Qt
+            </div>
+            <div class="portfolio-entry">
+                <b>Infrastructure:</b> git, bash, Docker, multi-platform development (Linux, Windows, macOS),
+                cross-compilation, arm64 + wasm deployments, Jira, SQL
+            </div>
+            <div class="portfolio-entry">
+                <b>Topics:</b> physically based rendering, multi-threaded programming, virtual reality, video and audio
+                pipelines, HDR videos and displays
+            </div>
+            <ul>
+        </div>
+        <div class="portfolio-card grid--item grid--col1 grid--row1">
+            <h2>Misc</h2>
+            <div class="portfolio-entry">
+                <ul>
+                    <li>Credited “3D Programmer” for Anno 1800</li>
+                    <li>CHI 2019 video showcase award for “TrussFormer:
+                        3D Printing Large Kinetic Structures”</li>
+                    <li>Web3D 2020 publication of ”Physically-based Envi-
+                        ronment and Area Lighting using Progressive Rendering in WebGL”</li>
+                </ul>
+            </div>
+        </div>
+        <div class="portfolio-card grid--col-all">
+            <h2>Projects</h2>
+            <div class="d-flex flex__fl-equal">
+                <div class="portfolio-entry flex--item">
+                    <h3>vkpaper</h3>
+                    <div><a href="https://github.com/cgphilipp/vkpaper"
+                            target=”_blank”>https://github.com/cgphilipp/vkpaper</a></div>
+                    Description coming soon!
+                </div>
+                <div class="portfolio-entry flex--item m16">
+                    <h3>who the chess?</h3>
+                    <div><a href="https://github.com/cgphilipp/who-the-chess"
+                            target=”_blank”>https://github.com/cgphilipp/who-the-chess</a>
+                    </div>
+                    Description coming soon!
+                </div>
+                <div class="portfolio-entry flex--item">
+                    <h3>live demo with Rust + wasm</h3>
+                    Coming soon!
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
