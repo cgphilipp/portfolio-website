@@ -16,6 +16,21 @@
             font-family: montserrat;
         }
 
+        .canvas {
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            height: 200px;
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            text-shadow: #000 1px 0px 0px, #000 0px 1px 0px, #000 -1px 0px 0px, #000 0px -1px 0px;
+        }
+
         .portfolio-card {
             padding: 20px;
             border: 1px solid #b6b6b6;
@@ -57,24 +72,44 @@
 </head>
 
 <body>
-    <header class="p24 bg-green-400 fc-white">
-        <h1 class="p6 m0 fs-headline2 ta-center">Philipp Otto</h1>
-        <div class="p6 m0 fs-subheading ta-center">
-            <a href="https://www.linkedin.com/in/philipp-otto-8691a4265/" target=”_blank”>
-                <image src="image/in-logo/InBug-White.png" style="height: 1em;">
-            </a>
-            <a href="https://github.com/cgphilipp" target=”_blank”>
-                <image src="image/github-mark/github-mark-white.svg" style="height: 1em;">
-            </a>
+    <header id="header" class="p24 bg-green-400 fc-white">
+        <canvas id="canvas" class="canvas">
+        </canvas>
+        <script type="module">
+            import(`./wasm-terrain/wgpu-playground.js`).then((module) => module.default());
+            console.log("Initialized wgpu-playground!");
+
+            const resizeListen = () => {
+                const canvas = document.getElementById("canvas");
+                const header = document.getElementById("header");
+                canvas.style.height = header.offsetHeight + "px";
+                canvas.innerWidth = header.offsetHeight;
+            };
+            window.addEventListener("resize", resizeListen);
+            resizeListen();
+        </script>
+
+        <div class="header-content">
+            <h1 class="p6 m0 fs-display1 ta-center">Philipp Otto</h1>
+            <div class="p6 m0 fs-subheading ta-center">
+                <a href="https://www.linkedin.com/in/philipp-otto-8691a4265/" target=”_blank”>
+                    <image src="image/in-logo/InBug-White.png" style="height: 1em;">
+                </a>
+                <a href="https://github.com/cgphilipp" target=”_blank”>
+                    <image src="image/github-mark/github-mark-white.svg" style="height: 1em;">
+                </a>
+            </div>
+            <div class="fs-title ta-center">
+                <p class="p0 m0">
+                    <i>computer graphics and audio/video specialist,</i>
+                <p class="p0 m0">
+                    <i>C++ and rust generalist,</i>
+                </p>
+                <p class="p0 m0">
+                    <i>making things render quick since 2015</i>
+                </p>
+            </div>
         </div>
-        <p class="p0 m0 fs-subheading ta-center">
-            <i>computer graphics and audio/video specialist,</i>
-        <p class="p0 m0 fs-subheading ta-center">
-            <i>C++ and rust generalist,</i>
-        </p>
-        <p class="p0 m0 fs-subheading ta-center">
-            <i>making things render quick since 2015</i>
-        </p>
     </header>
 
     <div class="m16 d-grid g16 grid__3 sm:g-af-row">
