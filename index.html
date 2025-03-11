@@ -25,10 +25,22 @@
             z-index: 1;
         }
 
-        .header-work-experience {
+        .header-info {
             position: relative;
             z-index: 2;
             text-shadow: #000 1px 0px 0px, #000 0px 1px 0px, #000 -1px 0px 0px, #000 0px -1px 0px;
+        }
+
+        .header-note {
+            position: absolute;
+            z-index: 2;
+            font-size: 0.8em;
+            top: 8px;
+            right: 8px;
+            background-color: #00000033;
+            border-radius: 5px;
+            width: fit-content;
+            padding: 4px;
         }
 
         .education {
@@ -108,6 +120,11 @@
             font-size: 1em;
             color: var(--black-500);
         }
+
+        .image {
+            max-width: 100%;
+            max-height: 100%;
+        }
     </style>
 </head>
 
@@ -129,9 +146,9 @@
             resizeListen();
         </script>
 
-        <div class="header-work-experience">
-            <h1 class="p6 m0 fs-display1 ta-center">Philipp Otto</h1>
-            <div class="p6 m0 fs-subheading ta-center">
+        <div class="header-info ta-center p16">
+            <h1 class="p6 m0 fs-display1">Philipp Otto</h1>
+            <div class="p6 m0 fs-subheading">
                 <a href="https://www.linkedin.com/in/philipp-otto-8691a4265/" target=”_blank”>
                     <image src="image/in-logo/InBug-White.png" style="height: 1em;">
                 </a>
@@ -139,7 +156,7 @@
                     <image src="image/github-mark/github-mark-white.svg" style="height: 1em;">
                 </a>
             </div>
-            <div class="fs-title ta-center">
+            <div class="fs-title">
                 <p class="p0 m0">
                     <i>computer graphics and audio/video specialist,</i>
                 <p class="p0 m0">
@@ -149,6 +166,9 @@
                     <i>making things render quick since 2015</i>
                 </p>
             </div>
+        </div>
+        <div class="header-note">
+            Rendered live in your browser with Rust + wasm 🚀
         </div>
     </header>
 
@@ -289,20 +309,49 @@
     </div>
 
     <div class="portfolio-card m16">
-        <h2>Projects</h2>
+        <h2>Personal projects</h2>
         <div class="d-flex flex__fl-equal">
             <div class="portfolio-entry flex--item">
-                <h3>vkpaper</h3>
-                <div><a href="https://github.com/cgphilipp/vkpaper"
-                        target=”_blank”>https://github.com/cgphilipp/vkpaper</a></div>
-                Description coming soon!
+                <a href="https://github.com/cgphilipp/vkpaper" target=”_blank”>
+                    <h3>vkpaper</h3>
+                    <div>https://github.com/cgphilipp/vkpaper</div>
+                </a>
+                <br>
+                <div class="mb16"><b>vkpaper</b> is a wallpaper daemon for Wayland based compositors, written in C++ and
+                    using Vulkan as the rendering backend.
+                    It allows users to render shaders (in Shadertoy compatible format) as their wallpaper.
+                    Additionally, I introduced <i>transition shaders</i> to allow users to write their own transition
+                    between their wallpapers.
+                </div>
+                <div class="mb16">In this video I show three transition shaders I wrote: a noisy transition, a growing
+                    ellipse and a
+                    simple move-in animation. Shader credit goes to <a
+                        href="https://www.shadertoy.com/view/4s2yW1">knarkowicz</a> and <a
+                        href="https://www.shadertoy.com/view/Mts3zM">nimitz</a>
+                </div>
+                <video controls class="image">
+                    <source src="video/screencast-vkpaper.webm" type="video/webm">
+                    Your browser does not support webm videos.
+                </video>
             </div>
             <div class="portfolio-entry flex--item m16">
-                <h3>who the chess?</h3>
-                <div><a href="https://github.com/cgphilipp/who-the-chess"
+                <h3><a href="https://chess.cgphilipp.de/" target=”_blank”>who the chess?</a></h3>
+                <div class="mb16">
+                    <a href="https://github.com/cgphilipp/who-the-chess"
                         target=”_blank”>https://github.com/cgphilipp/who-the-chess</a>
                 </div>
-                Description coming soon!
+                <div class="mb16">
+                    I implemented a chess quiz as a single-page-application using a Rust backend.
+                    By querying the WikiData datasets using SPARQL, I automatically gathered the necessary
+                    information about chess grandmasters and transformed the data to JSON.
+                </div>
+                <div class="mb16">
+                    By combining htmx and server-side rendering, I implemented a responsive quiz with auto-completion.
+                    All necessary assets are compiled into a single Rust executable, making deployment super easy!
+                </div>
+                <a href="https://chess.cgphilipp.de/" target=”_blank”>
+                    <img class="image" src="image/whothechess.png">
+                </a>
             </div>
             <div class="portfolio-entry flex--item">
                 <h3>live demo with Rust + wasm</h3>
